@@ -20,6 +20,6 @@ public class Calculator {
     public int solverNikitin(){
         int a = 10;
         int b = 5;
-        return add(dif(a,b),div(times(a,b),b));
+        return add(diff(a,b),div(times(a,b),b));
     }
 }
