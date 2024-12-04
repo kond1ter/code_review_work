@@ -11,13 +11,13 @@ on:
     - cron: '0 22 * * 5'
 
 jobs:
-  build-ubuntu:
-
-    runs-on: ubuntu-latest
-
+  build:
     strategy:
-      matrix:
-        java-version: [ 11, 17, 20 ]
+        matrix:
+          java-version: [ 11, 17, 20 ]
+          os: [ 'ubuntu-latest', 'windows-latest', 'macos-latest' ]
+    
+    runs-on: ${{ matrix.os }}
 
     steps:
     - uses: actions/checkout@v4
